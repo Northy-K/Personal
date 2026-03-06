@@ -21,6 +21,32 @@
             padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0,0.7);
         }
+        input{
+            padding: 8px;
+            width: 80%;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: rgb(65, 65, 255);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            
+        }
+        button:hover{
+            background-color:rgb(0, 13, 194);
+            color: rgb(255, 142, 142);
+        }
+        #result{
+            margin-top: 20px;
+            font-weight: bold;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -28,14 +54,21 @@
         <h2> Fahrenheit ››› Celsjusz</h2>
         <form>
             Podaj temperature w °F <br>
-            <input type="number" id="fahrenheit"><br>
-            <button type="button" onclick="convertTemperature()">Przelicz</button>
+
+        <input type="number" id="fahrenheit" oninput="convertTemperature()" ><br>
+
+        <!--        <input type="number" id="fahrenheit"><br>
+        <button type="button" onclick="convertTemperature()">Przelicz</button> -->
         </form>
         <p id="result"></p>
     </div>
     <script>
         function convertTemperature(){
             let fahrenheitValue = document.getElementById("fahrenheit").value
+            if(fahrenheitValue === ""){
+                document.getElementById("result").innerHTML = "";
+                return;
+            }
             let celsiusValue = (fahrenheitValue - 32) * 5 / 9;
             document.getElementById("result").innerHTML = "Temperatura w ℃: " + celsiusValue.toFixed(2);
         }
