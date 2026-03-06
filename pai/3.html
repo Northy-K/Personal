@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przeliczanie Temperatury</title>
+</head>
+<body>
+    <div class="kontener">
+        <h2> Fahrenheit -> Celsjusz</h2>
+        <form>
+            Podaj temperature w °F <br>
+            <input type="number" id="fahrenheit"><br>
+            <button type="button" onclick="convertTemperature()">Przelicz</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        function convertTemperature(){
+            let fahrenheitValue = document.getElementById("fahrenheit").value
+            let celsiusValue = (fahrenheitValue - 32) * 5 / 9;
+            document.getElementById("result").innerHTML = "Temperatura w ℃: " + celsiusValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>
