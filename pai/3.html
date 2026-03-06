@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Przeliczanie Temperatury</title>
     <style>
-        :root{
-            background-color: yellowgreen;
+        body{
+            
         }
         .kontener{
-            width: 50%;
-            height: 40%;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            align-items: center;
             text-align: center;
-            margin-top: 30%;
+            margin-top: 20%;
             margin-left: 25%;
-            font-size: 32px;
-            background-color: darkgreen;
-            border-color: white;
+            font-size: 26px;
             border-radius: 40px;
-            
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.7);
         }
     </style>
 </head>
 <body>
     <div class="kontener">
-        <h2> Fahrenheit -> Celsjusz</h2>
+        <h2> Fahrenheit ››› Celsjusz</h2>
         <form>
             Podaj temperature w °F <br>
             <input type="number" id="fahrenheit"><br>
